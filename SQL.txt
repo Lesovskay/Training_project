@@ -1,0 +1,24 @@
+№1
+Проверить, отображается ли созданный заказ в базе данных.
+
+SELECT c.login,
+COUNT(*)
+FROM "Couriers" AS c
+RIGHT JOIN "Orders" AS o ON c.id = o."courierId"
+WHERE o."inDelivery" = True
+GROUP BY c.login;
+
+
+№2
+Статусы заказы. Нужно убедиться, что в базе данных они записываются корректно.
+
+SELECT track,
+CASE 
+    WHEN finished = True THEN 2
+    WHEN cancelled = True THEN -1
+    WHEN "inDelivery" = True THEN 1
+    ELSE 0
+END AS Status
+FROM "Orders";
+
+
