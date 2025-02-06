@@ -1,4 +1,4 @@
-# Андрейченко Олеся, 24-я когорта — Финальный проект. Инженер по тестированию плюс
+
 import sender_stand_request
 
 def test_create_order():
